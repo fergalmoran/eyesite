@@ -1,0 +1,28 @@
+<h1>Show Service</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @service.title %>
+  </li>
+
+  <li>
+    <strong>Ip:</strong>
+    <%= @service.ip %>
+  </li>
+
+  <li>
+    <strong>Port:</strong>
+    <%= @service.port %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @service.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.service_path(@conn, :edit, @service) %></span> |
+<span><%= link "Back", to: Routes.service_path(@conn, :index) %></span>

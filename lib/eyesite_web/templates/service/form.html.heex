@@ -1,0 +1,40 @@
+<.form let={f} for={@changeset} action={@action}>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="mb-6">
+    <%= label f, :title, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+    <%= text_input f, :title, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    <%= error_tag f, :title %>
+  </div>
+  
+  <div class="mb-6">
+    <%= label f, :ip, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+    <%= text_input f, :ip, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    <%= error_tag f, :ip %>
+  </div>
+
+  <div class="mb-6">
+    <%= label f, :port, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+    <%= number_input f, :port, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    <%= error_tag f, :port %>
+  </div>
+
+  <div class="mb-6">
+    <%= label f, :description, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+    <%= textarea f, :description, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    <%= error_tag f, :description %>
+  </div>
+
+  <div>
+    <EyesiteWeb.Components.ButtonComponent.button
+         type="submit" 
+         text="Save" 
+         text_color="text-white" 
+         icon="save"
+         bg_color="bg-blue-700" />
+  </div>
+</.form>
