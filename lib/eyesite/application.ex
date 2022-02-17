@@ -15,9 +15,10 @@ defmodule Eyesite.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Eyesite.PubSub},
       # Start the Endpoint (http/https)
-      EyesiteWeb.Endpoint
+      EyesiteWeb.Endpoint,
       # Start a worker by calling: Eyesite.Worker.start_link(arg)
       # {Eyesite.Worker, arg}
+      Eyesite.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

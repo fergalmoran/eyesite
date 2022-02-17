@@ -51,7 +51,8 @@ defmodule Eyesite.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:ex_fontawesome, "~> 0.6.0"},
-      {:ex_heroicons, "~> 0.6.0"}
+      {:ex_heroicons, "~> 0.6.0"},
+      {:quantum, "~> 3.0"}
     ]
   end
 

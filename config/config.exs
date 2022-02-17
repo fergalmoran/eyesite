@@ -41,6 +41,7 @@ config :esbuild,
 
 # Configures Elixir's Logger
 config :logger, :console,
+  level: :debug,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
@@ -48,14 +49,25 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 # Setup tailwind
-config :tailwind, version: "3.0.18", default: [
-  args: ~w(
+config :tailwind,
+  version: "3.0.18",
+  default: [
+    args: ~w(
     --config=tailwind.config.js
     --input=css/app.css
     --output=../priv/static/assets/app.css
   ),
-  cd: Path.expand("../assets", __DIR__)
-]
+    cd: Path.expand("../assets", __DIR__)
+  ]
+
+config :eyesite, Eyesite.Scheduler,
+  jobs: [
+    # Every minute
+    # {{:cron, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
+    # Every second
+    {{:extended, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

@@ -1,3 +1,23 @@
 {
-    "workbench.colorTheme": "Outrun Night"
+    "workbench.colorTheme": "Copilot Theme",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#8a6b98",
+        "activityBar.activeBorder": "#4b4434",
+        "activityBar.background": "#8a6b98",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#4b4434",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#8a6b98",
+        "statusBar.background": "#6f557b",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#8a6b98",
+        "statusBarItem.remoteBackground": "#6f557b",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#6f557b",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#6f557b99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#6F557B",
 }
