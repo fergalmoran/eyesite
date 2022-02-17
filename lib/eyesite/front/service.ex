@@ -4,9 +4,10 @@ defmodule Eyesite.Front.Service do
 
   schema "services" do
     field :description, :string
-    field :ip, :string
+    field :host, :string
     field :port, :integer
     field :title, :string
+    field :type, Ecto.Enum, values: [:http, :port, :response, :ping]
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule Eyesite.Front.Service do
   @doc false
   def changeset(service, attrs) do
     service
-    |> cast(attrs, [:title, :ip, :port, :description])
-    |> validate_required([:title, :ip, :port])
+    |> cast(attrs, [:title, :host, :port, :description, :type])
+    |> validate_required([:title, :host, :port, :type])
   end
 end

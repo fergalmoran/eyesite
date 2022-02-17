@@ -63,9 +63,9 @@ config :tailwind,
 config :eyesite, Eyesite.Scheduler,
   jobs: [
     # Every minute
-    # {{:cron, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
+    {{:cron, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
     # Every second
-    {{:extended, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
+    # {{:extended, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
   ]
 
 # Import environment specific config. This must remain at the bottom

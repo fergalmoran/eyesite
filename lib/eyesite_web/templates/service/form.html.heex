@@ -29,6 +29,12 @@
     <%= error_tag f, :description %>
   </div>
 
+  <div class="mb-6">
+    <%= label f, :type, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+    <%= select f, :type, Ecto.Enum.values(Eyesite.Front.Service, :type) %>
+    <%= error_tag f, :type %>
+  </div>
+
   <div>
     <EyesiteWeb.Components.ButtonComponent.button
          type="submit" 
