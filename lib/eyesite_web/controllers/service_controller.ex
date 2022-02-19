@@ -16,7 +16,7 @@ defmodule EyesiteWeb.ServiceController do
 
   def create(conn, %{"service" => service_params}) do
     case Front.create_service(service_params) do
-      {:ok, service} ->
+      {:ok, _service} ->
         conn
         |> put_flash(:info, "Service created successfully.")
         |> redirect(to: Routes.service_path(conn, :index))

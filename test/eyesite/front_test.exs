@@ -8,7 +8,7 @@ defmodule Eyesite.FrontTest do
 
     import Eyesite.FrontFixtures
 
-    @invalid_attrs %{description: nil, ip: nil, port: nil, title: nil}
+    @invalid_attrs %{description: nil, host: nil, port: nil, title: nil}
 
     test "list_services/0 returns all services" do
       service = service_fixture()
@@ -21,13 +21,14 @@ defmodule Eyesite.FrontTest do
     end
 
     test "create_service/1 with valid data creates a service" do
-      valid_attrs = %{description: "some description", ip: "some ip", port: 42, title: "some title"}
+      valid_attrs = %{description: "some description", host: "some host", port: 42, title: "some title", type: :port}
 
       assert {:ok, %Service{} = service} = Front.create_service(valid_attrs)
       assert service.description == "some description"
-      assert service.ip == "some ip"
+      assert service.host == "some host"
       assert service.port == 42
       assert service.title == "some title"
+      assert service.type == :port
     end
 
     test "create_service/1 with invalid data returns error changeset" do
@@ -36,13 +37,14 @@ defmodule Eyesite.FrontTest do
 
     test "update_service/2 with valid data updates the service" do
       service = service_fixture()
-      update_attrs = %{description: "some updated description", ip: "some updated ip", port: 43, title: "some updated title"}
+      update_attrs = %{description: "some updated description", host: "some updated host", port: 43, title: "some updated title", type: :ping}
 
       assert {:ok, %Service{} = service} = Front.update_service(service, update_attrs)
       assert service.description == "some updated description"
-      assert service.ip == "some updated ip"
+      assert service.host == "some updated host"
       assert service.port == 43
       assert service.title == "some updated title"
+      assert service.type == :ping
     end
 
     test "update_service/2 with invalid data returns error changeset" do

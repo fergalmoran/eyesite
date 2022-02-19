@@ -16,6 +16,6 @@ defmodule Eyesite.Front.Service do
   def changeset(service, attrs) do
     service
     |> cast(attrs, [:title, :host, :port, :description, :type])
-    |> validate_required([:title, :host, :port, :type])
+    |> validate_required([:title, :host, :port])
   end
 end

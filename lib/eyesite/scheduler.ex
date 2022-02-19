@@ -12,12 +12,12 @@ defmodule Eyesite.Scheduler.Jobs.CheckHosts do
 
     Front.list_services()
     |> Enum.each(fn service ->
-      {result, description} = Eyesite.Hostchecker.check(service.ip, service.port)
+      {result, description} = Eyesite.Hostchecker.check(service.host, service.port)
 
       if result == :ok do
-        Logger.info("Host #{service.ip} is up")
+        Logger.info("Host #{service.host} is up")
       else
-        Logger.info("Host #{service.ip} is down #{description}")
+        Logger.info("Host #{service.host} is down #{description}")
       end
       :ok
     end)

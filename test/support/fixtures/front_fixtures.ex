@@ -12,9 +12,10 @@ defmodule Eyesite.FrontFixtures do
       attrs
       |> Enum.into(%{
         description: "some description",
-        ip: "some ip",
+        host: "some host",
         port: 42,
-        title: "some title"
+        title: "some title",
+        type: :port
       })
       |> Eyesite.Front.create_service()
 

@@ -3,14 +3,14 @@ defmodule EyesiteWeb.ServiceControllerTest do
 
   import Eyesite.FrontFixtures
 
-  @create_attrs %{description: "some description", ip: "some ip", port: 42, title: "some title"}
-  @update_attrs %{description: "some updated description", ip: "some updated ip", port: 43, title: "some updated title"}
-  @invalid_attrs %{description: nil, ip: nil, port: nil, title: nil}
+  @create_attrs %{description: "some description", host: "some host", port: 42, title: "some title", type: :port}
+  @update_attrs %{description: "some updated description", host: "some updated host", port: 43, title: "some updated title", type: :ping}
+  @invalid_attrs %{description: nil, host: nil, port: nil, title: nil}
 
   describe "index" do
     test "lists all services", %{conn: conn} do
       conn = get(conn, Routes.service_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Services"
+      assert html_response(conn, 200) =~ "Services"
     end
   end
 
@@ -25,11 +25,10 @@ defmodule EyesiteWeb.ServiceControllerTest do
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post(conn, Routes.service_path(conn, :create), service: @create_attrs)
 
-      assert %{id: id} = redirected_params(conn)
-      assert redirected_to(conn) == Routes.service_path(conn, :show, id)
+      assert redirected_to(conn) == Routes.service_path(conn, :index)
 
-      conn = get(conn, Routes.service_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Service"
+      conn = get(conn, Routes.service_path(conn, :index))
+      assert html_response(conn, 200) =~ "Services"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -52,9 +51,9 @@ defmodule EyesiteWeb.ServiceControllerTest do
 
     test "redirects when data is valid", %{conn: conn, service: service} do
       conn = put(conn, Routes.service_path(conn, :update, service), service: @update_attrs)
-      assert redirected_to(conn) == Routes.service_path(conn, :show, service)
+      assert redirected_to(conn) == Routes.service_path(conn, :index)
 
-      conn = get(conn, Routes.service_path(conn, :show, service))
+      conn = get(conn, Routes.service_path(conn, :index))
       assert html_response(conn, 200) =~ "some updated description"
     end
 
