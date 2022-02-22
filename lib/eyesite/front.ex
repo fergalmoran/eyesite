@@ -1,5 +1,5 @@
 defmodule Eyesite.Front do
-#This is a shitshow,
+  # This is a shitshow,
   @moduledoc """
   The Front context.
   """
@@ -51,11 +51,10 @@ defmodule Eyesite.Front do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_service(attrs \\ %{}) do
-    Logger.info(IO.inspect(attrs))
-
+  def create_service(user, attrs \\ %{}) do
     %Service{}
     |> Service.changeset(attrs)
+    |> Ecto.Changeset.put_assoc(:user, user)
     |> Repo.insert()
   end
 

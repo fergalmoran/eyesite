@@ -15,7 +15,9 @@ defmodule EyesiteWeb.ServiceController do
   end
 
   def create(conn, %{"service" => service_params}) do
-    case Front.create_service(service_params) do
+    user = conn.assigns.current_user
+
+    case Front.create_service(user, service_params) do
       {:ok, _service} ->
         conn
         |> put_flash(:info, "Service created successfully.")
