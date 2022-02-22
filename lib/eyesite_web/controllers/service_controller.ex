@@ -41,7 +41,7 @@ defmodule EyesiteWeb.ServiceController do
     service = Front.get_service!(id)
 
     case Front.update_service(service, service_params) do
-      {:ok, service} ->
+      {:ok, _service} ->
         conn
         |> put_flash(:info, "Service updated successfully.")
         |> redirect(to: Routes.service_path(conn, :index))

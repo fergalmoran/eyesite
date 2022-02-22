@@ -3,8 +3,6 @@ defmodule Eyesite.Hostchecker do
 
   def check(host, port) when is_number(port) do
 
-    IO.inspect(host)
-    IO.inspect(port)
     Logger.info("Checking #{host}:#{port}")
 
     case :gen_tcp.connect(to_charlist(host), port, [:binary]) do

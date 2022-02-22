@@ -52,7 +52,8 @@ defmodule Eyesite.MixProject do
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:ex_fontawesome, "~> 0.6.0"},
       {:ex_heroicons, "~> 0.6.0"},
-      {:quantum, "~> 3.0"}
+      {:quantum, "~> 3.0"},
+      {:pow, "~> 1.0.26"}
     ]
   end
 

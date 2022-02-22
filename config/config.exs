@@ -10,6 +10,11 @@ import Config
 config :eyesite,
   ecto_repos: [Eyesite.Repo]
 
+config :eyesite, :pow,
+  user: Eyesite.Users.User,
+  repo: Eyesite.Repo,
+  web_module: EyesiteWeb
+
 # Configures the endpoint
 config :eyesite, EyesiteWeb.Endpoint,
   url: [host: "localhost"],

@@ -1,9 +1,11 @@
 defmodule Eyesite.Front do
+#This is a shitshow,
   @moduledoc """
   The Front context.
   """
 
   import Ecto.Query, warn: false
+  require Logger
   alias Eyesite.Repo
 
   alias Eyesite.Front.Service
@@ -50,6 +52,8 @@ defmodule Eyesite.Front do
 
   """
   def create_service(attrs \\ %{}) do
+    Logger.info(IO.inspect(attrs))
+
     %Service{}
     |> Service.changeset(attrs)
     |> Repo.insert()

@@ -2,6 +2,7 @@ defmodule EyesiteWeb.PageController do
   use EyesiteWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    template = (Pow.Plug.current_user(conn) && "index.html") || "onboard.html"
+    render(conn, template)
   end
 end
