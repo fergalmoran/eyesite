@@ -1,7 +1,7 @@
-defmodule Eyesite.FrontFixtures do
+defmodule Eyesite.ServicesFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Eyesite.Front` context.
+  entities via the `Eyesite.Services` context.
   """
 
   @doc """
@@ -17,7 +17,7 @@ defmodule Eyesite.FrontFixtures do
         title: "some title",
         type: :port
       })
-      |> Eyesite.Front.create_service()
+      |> Eyesite.Services.create_service()
 
     service
   end

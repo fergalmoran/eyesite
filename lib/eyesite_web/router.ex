@@ -31,6 +31,7 @@ defmodule EyesiteWeb.Router do
 
     get "/", PageController, :index
     resources "/services", ServiceController
+    resources "/profile", ProfileController
   end
 
   # Other scopes may use custom stacks.

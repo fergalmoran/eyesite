@@ -1,4 +1,4 @@
-defmodule Eyesite.Front.Service do
+defmodule Eyesite.Services.Service do
   use Ecto.Schema
   import Ecto.Changeset
 

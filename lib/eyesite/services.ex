@@ -1,14 +1,14 @@
-defmodule Eyesite.Front do
-#This is a shitshow,
+defmodule Eyesite.Services do
+  # This is a shitshow,
   @moduledoc """
-  The Front context.
+  The Services context.
   """
 
   import Ecto.Query, warn: false
   require Logger
   alias Eyesite.Repo
 
-  alias Eyesite.Front.Service
+  alias Eyesite.Services.Service
 
   @doc """
   Returns the list of services.
@@ -51,11 +51,10 @@ defmodule Eyesite.Front do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_service(attrs \\ %{}) do
-    Logger.info(IO.inspect(attrs))
-
+  def create_service(user, attrs \\ %{}) do
     %Service{}
     |> Service.changeset(attrs)
+    |> Ecto.Changeset.put_assoc(:user, user)
     |> Repo.insert()
   end
 

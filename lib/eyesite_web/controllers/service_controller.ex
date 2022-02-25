@@ -1,21 +1,23 @@
 defmodule EyesiteWeb.ServiceController do
   use EyesiteWeb, :controller
 
-  alias Eyesite.Front
-  alias Eyesite.Front.Service
+  alias Eyesite.Services
+  alias Eyesite.Services.Service
 
   def index(conn, _params) do
-    services = Front.list_services()
+    services = Services.list_services()
     render(conn, "index.html", services: services)
   end
 
   def new(conn, _params) do
-    changeset = Front.change_service(%Service{})
+    changeset = Services.change_service(%Service{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"service" => service_params}) do
-    case Front.create_service(service_params) do
+    user = conn.assigns.current_user
+
+    case Services.create_service(user, service_params) do
       {:ok, _service} ->
         conn
         |> put_flash(:info, "Service created successfully.")
@@ -27,20 +29,20 @@ defmodule EyesiteWeb.ServiceController do
   end
 
   def show(conn, %{"id" => id}) do
-    service = Front.get_service!(id)
+    service = Services.get_service!(id)
     render(conn, "show.html", service: service)
   end
 
   def edit(conn, %{"id" => id}) do
-    service = Front.get_service!(id)
-    changeset = Front.change_service(service)
+    service = Services.get_service!(id)
+    changeset = Services.change_service(service)
     render(conn, "edit.html", service: service, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "service" => service_params}) do
-    service = Front.get_service!(id)
+    service = Services.get_service!(id)
 
-    case Front.update_service(service, service_params) do
+    case Services.update_service(service, service_params) do
       {:ok, _service} ->
         conn
         |> put_flash(:info, "Service updated successfully.")
@@ -52,8 +54,8 @@ defmodule EyesiteWeb.ServiceController do
   end
 
   def delete(conn, %{"id" => id}) do
-    service = Front.get_service!(id)
-    {:ok, _service} = Front.delete_service(service)
+    service = Services.get_service!(id)
+    {:ok, _service} = Services.delete_service(service)
 
     conn
     |> put_flash(:info, "Service deleted successfully.")
