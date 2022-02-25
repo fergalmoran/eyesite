@@ -1,14 +1,14 @@
-defmodule Eyesite.Front do
+defmodule Eyesite.Services do
   # This is a shitshow,
   @moduledoc """
-  The Front context.
+  The Services context.
   """
 
   import Ecto.Query, warn: false
   require Logger
   alias Eyesite.Repo
 
-  alias Eyesite.Front.Service
+  alias Eyesite.Services.Service
 
   @doc """
   Returns the list of services.

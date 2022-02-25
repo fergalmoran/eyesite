@@ -4,13 +4,13 @@ end
 
 defmodule Eyesite.Scheduler.Jobs.CheckHosts do
   use EyesiteWeb, :controller
-  alias Eyesite.Front
+  alias Eyesite.Services
   require Logger
 
   def run do
     Logger.info("Checking minutely hosts")
 
-    Front.list_services()
+    Services.list_services()
     |> Enum.each(fn service ->
       {result, description} = Eyesite.Hostchecker.check(service.host, service.port)
 
