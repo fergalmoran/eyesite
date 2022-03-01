@@ -1,4 +1,4 @@
-defmodule Eyesite.Repo.Migrations.CreateUsers do
+defmodule PingSite.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

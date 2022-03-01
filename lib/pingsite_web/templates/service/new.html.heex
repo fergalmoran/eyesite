@@ -1,0 +1,15 @@
+<div class="p-6">
+    <h1 class="text-2xl font-bold text-gray-700 dark:text-white">New Service</h1>
+</div>
+<%= render "form.html", Map.put(assigns, :action, Routes.service_path(@conn, :create)) %>
+<div class="mt-4">
+<span>
+    <PingSiteWeb.Components.ButtonComponent.href
+        bg_color="bg-red-400"
+        text_color="text-white"
+        text="Cancel"
+        icon="x-circle"
+        href={Routes.service_path(@conn, :index)}
+     />
+</span>
+</div>

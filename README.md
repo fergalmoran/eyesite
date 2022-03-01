@@ -1,4 +1,4 @@
-# Eyesite
+# PingSite
 
 To start your Phoenix server:
 

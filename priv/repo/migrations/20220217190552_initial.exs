@@ -1,4 +1,4 @@
-defmodule Eyesite.Repo.Migrations.AddServicesTable do
+defmodule PingSite.Repo.Migrations.AddServicesTable do
   use Ecto.Migration
 
   def change do

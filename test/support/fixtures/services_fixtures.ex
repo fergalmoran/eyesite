@@ -1,7 +1,7 @@
-defmodule Eyesite.ServicesFixtures do
+defmodule PingSite.ServicesFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Eyesite.Services` context.
+  entities via the `PingSite.Services` context.
   """
 
   @doc """
@@ -17,7 +17,7 @@ defmodule Eyesite.ServicesFixtures do
         title: "some title",
         type: :port
       })
-      |> Eyesite.Services.create_service()
+      |> PingSite.Services.create_service()
 
     service
   end

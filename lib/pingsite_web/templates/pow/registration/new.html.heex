@@ -1,0 +1,179 @@
+<div class="flex flex-col-reverse lg:flex-row md:items-strech">
+    <div class="flex items-center justify-center px-4 pt-6 bg-white lg:w-1/2 lg:min-h-screen md:pt-12 xl:px-0">
+    <div class="w-9/12 h-full xl:w-1/2">
+        <%= form_for @changeset, @action, [class: "h-full", as: :user], fn f -> %>
+            <div class="flex flex-col items-center justify-between w-full h-full">
+                <div>
+                <a href="/">
+                    <div>
+                    <img src="/images/pingsite-transparent.png" class="w-86 h-58" alt="Image">
+                    </div>
+                </a>
+                </div>
+                <%= if @changeset.action do %>
+                    <div class="alert alert-danger">
+                        <p>Oops, something went wrong! Please check the errors below.</p>
+                    </div>
+                <% end %>
+                <div class="w-full py-10 md:py-8 lg:py-0">
+                <h3 class="pt-6 text-lg font-extrabold text-gray-800 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xl:leading-8">
+                    Signup
+                </h3>
+                <div>
+                    <button class="flex items-center w-full px-2 py-2 mt-4 border border-gray-800 rounded-lg md:py-3 md:px-3 md:mt-8">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                            <path d="M21.9892 12.1871C21.9892 11.3677 21.9246 10.7697 21.7847 10.1497H12.6885V13.848H18.0277C17.9201 14.767 17.3388 16.1512 16.047 17.0812L16.0289 17.205L18.905 19.4969L19.1042 19.5173C20.9342 17.7789 21.9892 15.221 21.9892 12.1871Z" fill="#4285F4"></path>
+                            <path d="M12.6886 21.9314C15.3044 21.9314 17.5004 21.0455 19.1044 19.5175L16.0472 17.0813C15.2291 17.6682 14.1311 18.0779 12.6886 18.0779C10.1266 18.0779 7.95214 16.3395 7.177 13.9366L7.06338 13.9466L4.0728 16.3273L4.03369 16.4391C5.62687 19.6946 8.89937 21.9314 12.6886 21.9314Z" fill="#34A853"></path>
+                            <path d="M7.17667 13.9366C6.97215 13.3165 6.85378 12.6521 6.85378 11.9656C6.85378 11.279 6.97215 10.6147 7.16591 9.9946L7.1605 9.86254L4.13246 7.4436L4.03339 7.49208C3.37677 8.84299 3 10.36 3 11.9656C3 13.5712 3.37677 15.0881 4.03339 16.439L7.17667 13.9366Z" fill="#FBBC05"></path>
+                            <path d="M12.6886 5.85336C14.5078 5.85336 15.7349 6.66168 16.4347 7.33718L19.1689 4.59107C17.4896 2.9855 15.3044 2 12.6886 2C8.89934 2 5.62686 4.23672 4.03369 7.49214L7.16622 9.99466C7.95211 7.59183 10.1266 5.85336 12.6886 5.85336Z" fill="#EB4335"></path>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0">
+                                <rect width="24" height="24" fill="white" transform="translate(0.154297)"></rect>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="ml-4 text-xs font-medium leading-none text-gray-800 sm:text-sm md:text-base">Continue with Google</p>
+                    </button>
+                </div>
+                <div class="flex items-center justify-center my-6">
+                    <div class="w-1/2 border-b border-gray-400"></div>
+                    <p class="text-xs sm:text-sm md:text-base font-medium leading-none text-gray-400 px-2.5">OR</p>
+                    <div class="w-1/2 border-b border-gray-400"></div>
+                </div>
+                <div>
+                    <div class="flex flex-col mt-6">
+                        <%= label f, Pow.Ecto.Schema.user_id_field(@changeset), class: "text-sm font-semibold leading-tight sm:text-base md:text-lg"%>
+                        <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset), class: "w-full h-10 px-2 mt-2 text-gray-800 bg-gray-200 rounded focus:outline-none"  %>
+                        <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+                    </div>
+                    <div class="flex flex-col mt-5">
+                        <%= label f, :password, class: "text-sm font-semibold sm:text-base md:text-lg fleading-tight"  %>
+                        <div class="relative pb-1">
+                            <div class="absolute inset-0 m-auto mr-4 w-5 h-5 text-[#71717A]  flex items-center  cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-off" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="3" y1="3" x2="21" y2="21"></line>
+                                <path d="M10.584 10.587a2 2 0 0 0 2.828 2.83"></path>
+                                <path d="M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341"></path>
+                            </svg>
+                            </div>
+                            <%= password_input f, :password, class: "w-full h-10 px-2 mt-2 text-gray-800 bg-gray-200 rounded outline-none border-trasnparent" %>
+                        </div>
+                        <%= error_tag f, :password %>
+                    </div>
+                    <div class="flex flex-col mt-5">
+                        <%= label f, :password_confirmation, class: "text-sm font-semibold sm:text-base md:text-lg fleading-tight"  %>
+                        <div class="relative pb-1">
+                            <div class="absolute inset-0 m-auto mr-4 w-5 h-5 text-[#71717A]  flex items-center  cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-off" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="3" y1="3" x2="21" y2="21"></line>
+                                <path d="M10.584 10.587a2 2 0 0 0 2.828 2.83"></path>
+                                <path d="M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341"></path>
+                            </svg>
+                            </div>
+                            <%= password_input f, :password_confirmation, class: "w-full h-10 px-2 mt-2 text-gray-800 bg-gray-200 rounded outline-none border-trasnparent" %>
+                        </div>
+                        <%= error_tag f, :password_confirmation %>
+                    </div>
+                </div>
+                <%= submit "Sign up", class: "w-full px-8 py-3 mt-6 text-xs text-white uppercase transition duration-150 ease-in-out rounded bg-brand hover:opacity-75 md:text-sm" %>
+                <div class="flex items-center mt-5">
+                    <p class="text-xs font-medium leading-none text-gray-500">Already have an account?</p>
+                    <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) , class: "ml-2 text-xs font-medium leading-none text-gray-800 underline" %>
+                </div>
+                <p class="pt-4 text-xs text-center text-red-500 capitalize"></p>
+                </div>
+                <div class="pb-6 md:pb-12">
+                <p class="text-xs font-medium leading-4 text-center text-gray-500 sm:text-sm 2xl:leading-6">
+                    By signing up, you agree to our
+                    <span class="font-semibold text-gray-900 underline cursor-pointer">Terms Of Use</span> &amp; 
+                    <span class="font-semibold text-gray-900 underline cursor-pointer">Privacy Policy</span>
+                </p>
+                </div>
+            </div>
+       <% end %>
+    </div>
+    </div>
+    <div class="overflow-y-hidden lg:w-1/2 lg:min-h-screen">
+    <div class="relative h-full">
+        <div class="absolute right-0 z-20 object-cover object-center w-full h-full bg-gray-900 opacity-80"></div>
+        <img class="absolute right-0 z-0 object-cover object-center w-full h-full" src="/images/login-bg.jpg">
+        <div class="relative z-40 flex flex-col items-center justify-center h-full sm:items-start sm:pl-8 md:pl-10 lg:pl-16 xl:pl-24 py-14 lg:py-0">
+            <div class="w-11/12 sm:w-10/12 md:w-9/12 2xl:w-8/12">
+                <h4 class="text-base font-extrabold text-white sm:text-lg md:text-xl lg:text-2xl xl:text-4xl xl:leading-snug">
+                    Keeping a watchful eye on all your <span class="text-brand">services</span>
+                </h4>
+                <div class="flex flex-col mt-6 space-y-5 md:mt-8 xl:mt-10">
+                <div class="flex items-center">
+                    <div class="h-3.5 w-3.5 rounded-full flex items-center justify-center bg-white text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-2 text-xs font-bold leading-none sm:text-sm md:text-base text-gray-50">
+                        Self host or managed
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-3.5 w-3.5 rounded-full flex items-center justify-center bg-white text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-2 text-xs font-bold leading-none sm:text-sm md:text-base text-gray-50">
+                        Super generous free-tier
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-3.5 w-3.5 rounded-full flex items-center justify-center bg-white text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-2 text-xs font-bold leading-none sm:text-sm md:text-base text-gray-50">
+                        Community support
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-3.5 w-3.5 rounded-full flex items-center justify-center bg-white text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-2 text-xs font-bold leading-none sm:text-sm md:text-base text-gray-50">
+                        Open source
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-3.5 w-3.5 rounded-full flex items-center justify-center bg-white text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-2 text-xs font-bold leading-none sm:text-sm md:text-base text-gray-50">
+                    Highly Scalable
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-3.5 w-3.5 rounded-full flex items-center justify-center bg-white text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </div>
+                    <p class="ml-2 text-xs font-bold leading-none sm:text-sm md:text-base text-gray-50">Use on unlimited projects </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
