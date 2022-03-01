@@ -1,5 +1,4 @@
 defmodule Eyesite.Services do
-  # This is a shitshow,
   @moduledoc """
   The Services context.
   """

@@ -23,6 +23,7 @@ defmodule EyesiteWeb do
 
       import Plug.Conn
       import EyesiteWeb.Gettext
+      import Eyesite.Users.Helpers
       alias EyesiteWeb.Router.Helpers, as: Routes
     end
   end

@@ -1,0 +1,1 @@
+call "%~dp0\eyesite" eval Eyesite.Release.migrate

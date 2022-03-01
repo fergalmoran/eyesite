@@ -50,10 +50,11 @@ defmodule Eyesite.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
-      {:ex_fontawesome, "~> 0.6.0"},
+      {:ex_fontawesome, "~> 0.7.0"},
       {:ex_heroicons, "~> 0.6.0"},
       {:quantum, "~> 3.0"},
-      {:pow, "~> 1.0.26"}
+      {:pow, "~> 1.0.26"},
+      {:phoenix_profiler, "~> 0.1.0", github: "mcrumm/phoenix_profiler"}
     ]
   end
 

@@ -8,6 +8,7 @@ defmodule Eyesite.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {PhoenixProfiler, name: Eyesite.Profiler},
       # Start the Ecto repository
       Eyesite.Repo,
       # Start the Telemetry supervisor
