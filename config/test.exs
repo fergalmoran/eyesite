@@ -5,7 +5,7 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :pingsite, Eyesite.Repo,
+config :pingsite, PingSite.Repo,
   username: "postgres",
   password: "hackme",
   hostname: "localhost",
@@ -15,13 +15,13 @@ config :pingsite, Eyesite.Repo,
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :pingsite, EyesiteWeb.Endpoint,
+config :pingsite, PingSiteWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "gNQ6j+DhzSpXBnwCy2JT6yJivzP47IOZJ8GGHlVU7wJTiBqAr96yRBpXeeUZqS73",
   server: false
 
 # In test we don't send emails.
-config :pingsite, Eyesite.Mailer, adapter: Swoosh.Adapters.Test
+config :pingsite, PingSite.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn

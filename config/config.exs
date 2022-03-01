@@ -8,18 +8,18 @@
 import Config
 
 config :pingsite,
-  ecto_repos: [Eyesite.Repo]
+  ecto_repos: [PingSite.Repo]
 
 config :pingsite, :pow,
-  user: Eyesite.Users.User,
-  repo: Eyesite.Repo,
-  web_module: EyesiteWeb
+  user: PingSite.Users.User,
+  repo: PingSite.Repo,
+  web_module: PingSiteWeb
 
 # Configures the endpoint
-config :pingsite, EyesiteWeb.Endpoint,
+config :pingsite, PingSiteWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: EyesiteWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Eyesite.PubSub,
+  render_errors: [view: PingSiteWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PingSite.PubSub,
   live_view: [signing_salt: "ZV8LEz84"]
 
 # Configures the mailer
@@ -29,7 +29,7 @@ config :pingsite, EyesiteWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :pingsite, Eyesite.Mailer, adapter: Swoosh.Adapters.Local
+config :pingsite, PingSite.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
@@ -65,12 +65,12 @@ config :tailwind,
     cd: Path.expand("../assets", __DIR__)
   ]
 
-config :pingsite, Eyesite.Scheduler,
+config :pingsite, PingSite.Scheduler,
   jobs: [
     # Every minute
-    {{:cron, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
+    {{:cron, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
     # Every second
-    # {{:extended, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}
+    # {{:extended, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
   ]
 
 # Import environment specific config. This must remain at the bottom

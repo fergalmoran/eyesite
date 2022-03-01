@@ -1,4 +1,4 @@
-defmodule EyesiteWeb.ErrorHelpers do
+defmodule PingSiteWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule EyesiteWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(EyesiteWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PingSiteWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(EyesiteWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PingSiteWeb.Gettext, "errors", msg, opts)
     end
   end
 end

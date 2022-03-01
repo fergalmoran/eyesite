@@ -1,5 +1,5 @@
-defmodule EyesiteWeb.PageControllerTest do
-  use EyesiteWeb.ConnCase
+defmodule PingSiteWeb.PageControllerTest do
+  use PingSiteWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

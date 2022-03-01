@@ -1,3 +1,3 @@
-defmodule EyesiteWeb.PageViewTest do
-  use EyesiteWeb.ConnCase, async: true
+defmodule PingSiteWeb.PageViewTest do
+  use PingSiteWeb.ConnCase, async: true
 end

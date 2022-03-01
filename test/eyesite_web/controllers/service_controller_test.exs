@@ -1,7 +1,7 @@
-defmodule EyesiteWeb.ServiceControllerTest do
-  use EyesiteWeb.ConnCase
+defmodule PingSiteWeb.ServiceControllerTest do
+  use PingSiteWeb.ConnCase
 
-  import Eyesite.ServicesFixtures
+  import PingSite.ServicesFixtures
 
   @create_attrs %{description: "some description", host: "some host", port: 42, title: "some title", type: :port}
   @update_attrs %{description: "some updated description", host: "some updated host", port: 43, title: "some updated title", type: :ping}

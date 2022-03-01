@@ -1,4 +1,4 @@
-defmodule Eyesite.MixProject do
+defmodule PingSite.MixProject do
   use Mix.Project
 
   def project do
@@ -19,7 +19,7 @@ defmodule Eyesite.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Eyesite.Application, []},
+      mod: {PingSite.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

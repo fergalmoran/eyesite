@@ -1,4 +1,4 @@
-defmodule Eyesite.Application do
+defmodule PingSite.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,23 +8,23 @@ defmodule Eyesite.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      {PhoenixProfiler, name: Eyesite.Profiler},
+      {PhoenixProfiler, name: PingSite.Profiler},
       # Start the Ecto repository
-      Eyesite.Repo,
+      PingSite.Repo,
       # Start the Telemetry supervisor
-      EyesiteWeb.Telemetry,
+      PingSiteWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Eyesite.PubSub},
+      {Phoenix.PubSub, name: PingSite.PubSub},
       # Start the Endpoint (http/https)
-      EyesiteWeb.Endpoint,
-      # Start a worker by calling: Eyesite.Worker.start_link(arg)
-      # {Eyesite.Worker, arg}
-      Eyesite.Scheduler
+      PingSiteWeb.Endpoint,
+      # Start a worker by calling: PingSite.Worker.start_link(arg)
+      # {PingSite.Worker, arg}
+      PingSite.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Eyesite.Supervisor]
+    opts = [strategy: :one_for_one, name: PingSite.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -32,7 +32,7 @@ defmodule Eyesite.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    EyesiteWeb.Endpoint.config_change(changed, removed)
+    PingSiteWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

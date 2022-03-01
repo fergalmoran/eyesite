@@ -1,10 +1,10 @@
-defmodule Eyesite.Scheduler do
+defmodule PingSite.Scheduler do
   use Quantum, otp_app: :pingsite
 end
 
-defmodule Eyesite.Scheduler.Jobs.CheckHosts do
-  use EyesiteWeb, :controller
-  alias Eyesite.Services
+defmodule PingSite.Scheduler.Jobs.CheckHosts do
+  use PingSiteWeb, :controller
+  alias PingSite.Services
   require Logger
 
   def run do
@@ -12,7 +12,7 @@ defmodule Eyesite.Scheduler.Jobs.CheckHosts do
 
     Services.list_services()
     |> Enum.each(fn service ->
-      {result, description} = Eyesite.Hostchecker.check(service.host, service.port)
+      {result, description} = PingSite.Hostchecker.check(service.host, service.port)
 
       if result == :ok do
         Logger.info("Host #{service.host} is up")

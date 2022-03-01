@@ -1,6 +1,6 @@
-defmodule EyesiteWeb.ProfileController do
-  use EyesiteWeb, :controller
-  alias Eyesite.Users
+defmodule PingSiteWeb.ProfileController do
+  use PingSiteWeb, :controller
+  alias PingSite.Users
 
   def index(conn, _params) do
     user = Pow.Plug.current_user(conn)

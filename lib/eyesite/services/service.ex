@@ -1,4 +1,4 @@
-defmodule Eyesite.Services.Service do
+defmodule PingSite.Services.Service do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -10,7 +10,7 @@ defmodule Eyesite.Services.Service do
     field :port, :integer
     field :title, :string
     field :type, Ecto.Enum, values: [:http, :port, :response, :ping]
-    belongs_to :user, Eyesite.Users.User, references: :id, type: :binary_id
+    belongs_to :user, PingSite.Users.User, references: :id, type: :binary_id
     timestamps()
   end
 

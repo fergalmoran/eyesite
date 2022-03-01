@@ -1,4 +1,4 @@
-defmodule EyesiteWeb.Components.ButtonComponent do
+defmodule PingSiteWeb.Components.ButtonComponent do
   use Phoenix.Component
 
   def button(assigns) do

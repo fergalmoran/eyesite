@@ -1,3 +1,3 @@
-defmodule Eyesite.Mailer do
+defmodule PingSite.Mailer do
   use Swoosh.Mailer, otp_app: :pingsite
 end

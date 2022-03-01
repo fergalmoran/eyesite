@@ -1,12 +1,12 @@
-defmodule EyesiteWeb do
+defmodule PingSiteWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use EyesiteWeb, :controller
-      use EyesiteWeb, :view
+      use PingSiteWeb, :controller
+      use PingSiteWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,12 +19,12 @@ defmodule EyesiteWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: EyesiteWeb
+      use Phoenix.Controller, namespace: PingSiteWeb
 
       import Plug.Conn
-      import EyesiteWeb.Gettext
-      import Eyesite.Users.Helpers
-      alias EyesiteWeb.Router.Helpers, as: Routes
+      import PingSiteWeb.Gettext
+      import PingSite.Users.Helpers
+      alias PingSiteWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -32,7 +32,7 @@ defmodule EyesiteWeb do
     quote do
       use Phoenix.View,
         root: "lib/pingsite_web/templates",
-        namespace: EyesiteWeb
+        namespace: PingSiteWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -46,7 +46,7 @@ defmodule EyesiteWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {EyesiteWeb.LayoutView, "live.html"}
+        layout: {PingSiteWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -81,7 +81,7 @@ defmodule EyesiteWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import EyesiteWeb.Gettext
+      import PingSiteWeb.Gettext
     end
   end
 
@@ -96,9 +96,9 @@ defmodule EyesiteWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import EyesiteWeb.ErrorHelpers
-      import EyesiteWeb.Gettext
-      alias EyesiteWeb.Router.Helpers, as: Routes
+      import PingSiteWeb.ErrorHelpers
+      import PingSiteWeb.Gettext
+      alias PingSiteWeb.Router.Helpers, as: Routes
     end
   end
 

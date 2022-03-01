@@ -1,8 +1,8 @@
-defmodule EyesiteWeb.ServiceController do
-  use EyesiteWeb, :controller
+defmodule PingSiteWeb.ServiceController do
+  use PingSiteWeb, :controller
 
-  alias Eyesite.Services
-  alias Eyesite.Services.Service
+  alias PingSite.Services
+  alias PingSite.Services.Service
 
   def index(conn, _params) do
     services = Services.list_services()

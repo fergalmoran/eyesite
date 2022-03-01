@@ -1,3 +1,3 @@
-defmodule EyesiteWeb.Pow.SessionView do
-  use EyesiteWeb, :view
+defmodule PingSiteWeb.Pow.SessionView do
+  use PingSiteWeb, :view
 end

@@ -1,4 +1,4 @@
-defmodule EyesiteWeb.Endpoint do
+defmodule PingSiteWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :pingsite
 
   # The session will be stored in the cookie and signed,
@@ -47,5 +47,5 @@ defmodule EyesiteWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug Pow.Plug.Session, otp_app: :pingsite
-  plug EyesiteWeb.Router
+  plug PingSiteWeb.Router
 end

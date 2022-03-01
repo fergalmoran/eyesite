@@ -1,3 +1,3 @@
-defmodule EyesiteWeb.Pow.RegistrationView do
-  use EyesiteWeb, :view
+defmodule PingSiteWeb.Pow.RegistrationView do
+  use PingSiteWeb, :view
 end

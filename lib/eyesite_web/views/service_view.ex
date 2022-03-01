@@ -1,3 +1,3 @@
-defmodule EyesiteWeb.ServiceView do
-  use EyesiteWeb, :view
+defmodule PingSiteWeb.ServiceView do
+  use PingSiteWeb, :view
 end

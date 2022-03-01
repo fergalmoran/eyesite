@@ -1,13 +1,13 @@
-defmodule Eyesite.Users do
+defmodule PingSite.Users do
   @moduledoc """
   The Services context.
   """
 
   import Ecto.Query, warn: false
   require Logger
-  alias Eyesite.Repo
+  alias PingSite.Repo
 
-  alias Eyesite.Users.User
+  alias PingSite.Users.User
 
   def list_users do
     Repo.all(User)

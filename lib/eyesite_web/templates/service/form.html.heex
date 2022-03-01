@@ -32,7 +32,7 @@
 
   <div class="mb-6">
     <%= label f, :type, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
-    <%= select f, :type, Ecto.Enum.values(Eyesite.Services.Service, :type), class: "form-select form-select-lg mb-3
+    <%= select f, :type, Ecto.Enum.values(PingSite.Services.Service, :type), class: "form-select form-select-lg mb-3
       appearance-none
       block
       w-1/4
@@ -51,7 +51,7 @@
   </div>
 
   <div>
-    <EyesiteWeb.Components.ButtonComponent.button
+    <PingSiteWeb.Components.ButtonComponent.button
          type="submit" 
          text="Save" 
          text_color="text-white" 

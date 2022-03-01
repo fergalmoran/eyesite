@@ -1,4 +1,4 @@
-defmodule Eyesite.Users.User do
+defmodule PingSite.Users.User do
   require Logger
   use Ecto.Schema
   use Pow.Ecto.Schema

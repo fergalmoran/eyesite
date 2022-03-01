@@ -1,3 +1,3 @@
 defmodule EyeSiteWeb.ServiceViewTest do
-  use EyesiteWeb.ConnCase, async: true
+  use PingSiteWeb.ConnCase, async: true
 end

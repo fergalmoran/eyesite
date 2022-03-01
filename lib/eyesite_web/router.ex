@@ -1,12 +1,12 @@
-defmodule EyesiteWeb.Router do
-  use EyesiteWeb, :router
+defmodule PingSiteWeb.Router do
+  use PingSiteWeb, :router
   use Pow.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {EyesiteWeb.LayoutView, :root}
+    plug :put_root_layout, {PingSiteWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -25,14 +25,14 @@ defmodule EyesiteWeb.Router do
     pow_routes()
   end
 
-  scope "/", EyesiteWeb do
+  scope "/", PingSiteWeb do
     # pipe_through [:browser, :protected]
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  scope "/", EyesiteWeb do
+  scope "/", PingSiteWeb do
     pipe_through [:browser, :protected]
     resources "/services", ServiceController
 
@@ -45,7 +45,7 @@ defmodule EyesiteWeb.Router do
     scope "/" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: EyesiteWeb.Telemetry
+      live_dashboard "/dashboard", metrics: PingSiteWeb.Telemetry
     end
   end
 

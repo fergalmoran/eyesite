@@ -1,12 +1,12 @@
-defmodule Eyesite.ServicesTest do
-  use Eyesite.DataCase
+defmodule PingSite.ServicesTest do
+  use PingSite.DataCase
 
-  alias Eyesite.Services
+  alias PingSite.Services
 
   describe "services" do
-    alias Eyesite.Services.Service
+    alias PingSite.Services.Service
 
-    import Eyesite.ServicesFixtures
+    import PingSite.ServicesFixtures
 
     @invalid_attrs %{description: nil, host: nil, port: nil, title: nil}
 

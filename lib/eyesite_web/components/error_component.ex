@@ -1,4 +1,4 @@
-defmodule EyesiteWeb.Components.ErrorComponent do
+defmodule PingSiteWeb.Components.ErrorComponent do
   use Phoenix.Component
 
   def error(assigns, changeset) do

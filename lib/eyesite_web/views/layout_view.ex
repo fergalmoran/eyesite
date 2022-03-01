@@ -1,5 +1,5 @@
-defmodule EyesiteWeb.LayoutView do
-  use EyesiteWeb, :view
+defmodule PingSiteWeb.LayoutView do
+  use PingSiteWeb, :view
 
   # Phoenix LiveDashboard is available only in development by default,
   # so we instruct Elixir to not warn if the dashboard route is missing.

@@ -1,4 +1,4 @@
-defmodule EyesiteWeb.FormTextInput do
+defmodule PingSiteWeb.FormTextInput do
   use Phoenix.Component
 
   def text_input(assigns) do

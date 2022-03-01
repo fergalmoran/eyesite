@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :pingsite, Eyesite.Repo,
+config :pingsite, PingSite.Repo,
   username: "postgres",
   password: "hackme",
   hostname: "localhost",
@@ -15,8 +15,8 @@ config :pingsite, Eyesite.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :pingsite, EyesiteWeb.Endpoint,
-  phoenix_profiler: [server: Eyesite.Profiler],
+config :pingsite, PingSiteWeb.Endpoint,
+  phoenix_profiler: [server: PingSite.Profiler],
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -55,7 +55,7 @@ config :pingsite, EyesiteWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :pingsite, EyesiteWeb.Endpoint,
+config :pingsite, PingSiteWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",

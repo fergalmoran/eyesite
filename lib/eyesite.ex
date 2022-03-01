@@ -1,6 +1,6 @@
-defmodule Eyesite do
+defmodule PingSite do
   @moduledoc """
-  Eyesite keeps the contexts that define your domain
+  PingSite keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

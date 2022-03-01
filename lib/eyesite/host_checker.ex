@@ -1,4 +1,4 @@
-defmodule Eyesite.Hostchecker do
+defmodule PingSite.Hostchecker do
   require Logger
 
   def check(host, port) when is_number(port) do
