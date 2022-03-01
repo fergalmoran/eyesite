@@ -20,5 +20,5 @@ defmodule EyesiteWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :eyesite
+  use Gettext, otp_app: :pingsite
 end

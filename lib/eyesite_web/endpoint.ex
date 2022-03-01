@@ -1,12 +1,12 @@
 defmodule EyesiteWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :eyesite
+  use Phoenix.Endpoint, otp_app: :pingsite
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_eyesite_key",
+    key: "_pingsite_key",
     signing_salt: "0CGp2+Mv"
   ]
 
@@ -18,7 +18,7 @@ defmodule EyesiteWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :eyesite,
+    from: :pingsite,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule EyesiteWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :eyesite
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :pingsite
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -46,6 +46,6 @@ defmodule EyesiteWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug Pow.Plug.Session, otp_app: :eyesite
+  plug Pow.Plug.Session, otp_app: :pingsite
   plug EyesiteWeb.Router
 end

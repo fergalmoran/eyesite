@@ -31,7 +31,7 @@ defmodule EyesiteWeb do
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/eyesite_web/templates",
+        root: "lib/pingsite_web/templates",
         namespace: EyesiteWeb
 
       # Import convenience functions from controllers

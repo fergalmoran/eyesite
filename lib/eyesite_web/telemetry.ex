@@ -31,23 +31,23 @@ defmodule EyesiteWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("eyesite.repo.query.total_time",
+      summary("pingsite.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("eyesite.repo.query.decode_time",
+      summary("pingsite.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("eyesite.repo.query.query_time",
+      summary("pingsite.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("eyesite.repo.query.queue_time",
+      summary("pingsite.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("eyesite.repo.query.idle_time",
+      summary("pingsite.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"

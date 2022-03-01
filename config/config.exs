@@ -7,16 +7,16 @@
 # General application configuration
 import Config
 
-config :eyesite,
+config :pingsite,
   ecto_repos: [Eyesite.Repo]
 
-config :eyesite, :pow,
+config :pingsite, :pow,
   user: Eyesite.Users.User,
   repo: Eyesite.Repo,
   web_module: EyesiteWeb
 
 # Configures the endpoint
-config :eyesite, EyesiteWeb.Endpoint,
+config :pingsite, EyesiteWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: EyesiteWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Eyesite.PubSub,
@@ -29,7 +29,7 @@ config :eyesite, EyesiteWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :eyesite, Eyesite.Mailer, adapter: Swoosh.Adapters.Local
+config :pingsite, Eyesite.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
@@ -65,7 +65,7 @@ config :tailwind,
     cd: Path.expand("../assets", __DIR__)
   ]
 
-config :eyesite, Eyesite.Scheduler,
+config :pingsite, Eyesite.Scheduler,
   jobs: [
     # Every minute
     {{:cron, "* * * * *"}, {Eyesite.Scheduler.Jobs.CheckHosts, :run, []}}

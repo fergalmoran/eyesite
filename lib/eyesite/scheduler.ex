@@ -1,5 +1,5 @@
 defmodule Eyesite.Scheduler do
-  use Quantum, otp_app: :eyesite
+  use Quantum, otp_app: :pingsite
 end
 
 defmodule Eyesite.Scheduler.Jobs.CheckHosts do
