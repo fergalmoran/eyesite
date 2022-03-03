@@ -10,8 +10,12 @@ defmodule PingSiteWeb.Endpoint do
     signing_salt: "0CGp2+Mv"
   ]
 
-  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+  socket "/live", Phoenix.LiveView.Socket,
+    websocket: [connect_info: [session: @session_options]]
 
+  socket "/socket", PingSiteWeb.MobileAlertSocket,
+    websocket: true,
+    longpoll: false
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest

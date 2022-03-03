@@ -18,7 +18,13 @@ defmodule PingSite.Scheduler.Jobs.CheckHosts do
         Logger.info("Host #{service.host} is up")
       else
         Logger.info("Host #{service.host} is down #{description}")
+
+        PingSiteWeb.Endpoint.broadcast("updates:errors", "say", %{
+          "hostid" => service.id,
+          "message" => "Host #{service.host} is down #{description}"
+        })
       end
+
       :ok
     end)
   end
