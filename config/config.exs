@@ -68,9 +68,9 @@ config :tailwind,
 config :pingsite, PingSite.Scheduler,
   jobs: [
     # Every minute
-    # {{:cron, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
+    {{:cron, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
     # Every second
-    {{:extended, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
+    # {{:extended, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
   ]
 
 # Import environment specific config. This must remain at the bottom
