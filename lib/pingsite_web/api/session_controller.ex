@@ -56,4 +56,10 @@ defmodule PingSiteWeb.API.V1.SessionController do
     |> Pow.Plug.delete()
     |> json(%{data: %{}})
   end
+
+  @spec validate(Conn.t(), map()) :: Conn.t()
+  def validate(conn, _params) do
+    conn
+    |> json(%{data: %{}})
+  end
 end
