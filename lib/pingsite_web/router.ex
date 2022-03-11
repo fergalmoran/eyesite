@@ -18,6 +18,25 @@ defmodule PingSiteWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug PingSiteWeb.APIAuthPlug, otp_app: :pingsite
+  end
+
+  pipeline :api_protected do
+    plug Pow.Plug.RequireAuthenticated, error_handler: PingSiteWeb.APIAuthErrorHandler
+  end
+
+  scope "/api/v1", PingSiteWeb.API.V1, as: :api_v1 do
+    pipe_through :api
+
+    resources "/registration", RegistrationController, singleton: true, only: [:create]
+    resources "/session", SessionController, singleton: true, only: [:create, :delete]
+    post "/session/renew", SessionController, :renew
+  end
+
+  scope "/api/v1", MyAppWeb.API.V1, as: :api_v1 do
+    pipe_through [:api, :api_protected]
+
+    # Your protected API endpoints here
   end
 
   scope "/" do
@@ -39,6 +58,7 @@ defmodule PingSiteWeb.Router do
     get "/profile", ProfileController, :index
     put "/profile", ProfileController, :update
   end
+
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 
