@@ -65,6 +65,7 @@ config :tailwind,
     cd: Path.expand("../assets", __DIR__)
   ]
 
+# host check jobs
 config :pingsite, PingSite.Scheduler,
   jobs: [
     # Every minute
@@ -72,6 +73,12 @@ config :pingsite, PingSite.Scheduler,
     # Every second
     # {{:extended, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
   ]
+
+# push notifications
+config :pingsite, PingSite.FCM,
+  adapter: Pigeon.FCM,
+  project_id: "pingsite-fb",
+  service_account_json: File.read!("service_account.json")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

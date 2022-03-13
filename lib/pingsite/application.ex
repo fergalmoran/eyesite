@@ -19,7 +19,8 @@ defmodule PingSite.Application do
       PingSiteWeb.Endpoint,
       # Start a worker by calling: PingSite.Worker.start_link(arg)
       # {PingSite.Worker, arg}
-      PingSite.Scheduler
+      PingSite.Scheduler,
+      PingSite.FCM
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
