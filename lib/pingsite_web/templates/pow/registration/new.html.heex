@@ -14,6 +14,9 @@
                     <div class="alert alert-danger">
                         <p>Oops, something went wrong! Please check the errors below.</p>
                     </div>
+                    <div class="errors">
+                        <%= debug_only_errors_tag f %>
+                    </div>
                 <% end %>
                 <div class="w-full py-10 md:py-8 lg:py-0">
                 <h3 class="pt-6 text-lg font-extrabold text-gray-800 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xl:leading-8">

@@ -12,12 +12,9 @@ defmodule PingSite.Users.User do
     timestamps()
   end
 
-  def changeset(user_or_changeset, attrs) do
-    Logger.debug("changeset....")
-    IO.inspect(user_or_changeset)
-    IO.inspect(attrs)
-    user_or_changeset
-    |> cast(attrs, [:display_name])
-    |> validate_required([:display_name])
+  def changeset(changeset, attrs) do
+    changeset
+    |> cast(attrs, [:display_name, :email])
+    |> validate_required([:email])
   end
 end

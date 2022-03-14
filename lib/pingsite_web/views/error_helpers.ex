@@ -5,6 +5,13 @@ defmodule PingSiteWeb.ErrorHelpers do
 
   use Phoenix.HTML
 
+  def debug_only_errors_tag(form) do
+    Enum.map(form.errors, fn error ->
+      IO.inspect(error)
+      content_tag(:span, Kernel.inspect(error), class: "invalid-feedback")
+    end)
+  end
+
   @doc """
   Generates tag for inlined form input errors.
   """

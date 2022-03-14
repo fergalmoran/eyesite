@@ -38,6 +38,7 @@ defmodule PingSiteWeb.Router do
 
     # Your protected API endpoints here
     post "/session/validate", SessionController, :validate
+    post "/device/register", DeviceController, :register
   end
 
   scope "/" do
