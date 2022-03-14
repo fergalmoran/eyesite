@@ -14,7 +14,7 @@ defmodule PingSite.Users.User do
 
   def changeset(changeset, attrs) do
     changeset
-    |> cast(attrs, [:display_name, :email])
-    |> validate_required([:email])
+    |> pow_changeset(attrs)
+    |> cast(attrs, [:display_name])
   end
 end

@@ -6,6 +6,7 @@ defmodule PingSite.Repo.Migrations.CreateUsers do
       add :id, :uuid, primary_key: true
       add :email, :string, null: false
       add :password_hash, :string
+      add :display_name, :string, null: true
 
       timestamps()
     end
