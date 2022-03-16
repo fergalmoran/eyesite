@@ -33,10 +33,12 @@ defmodule PingSiteWeb.Router do
     post "/session/renew", SessionController, :renew
   end
 
-  scope "/api/v1", MyAppWeb.API.V1, as: :api_v1 do
+  scope "/api/v1", PingSiteWeb.API.V1, as: :api_v1 do
     pipe_through [:api, :api_protected]
 
     # Your protected API endpoints here
+    post "/session/validate", SessionController, :validate
+    post "/device/register", DeviceController, :register
   end
 
   scope "/" do

@@ -54,6 +54,8 @@ defmodule PingSite.MixProject do
       {:ex_heroicons, "~> 0.6.0"},
       {:quantum, "~> 3.0"},
       {:pow, "~> 1.0.26"},
+      {:pigeon, "~> 2.0.0-rc.0"},
+      {:kadabra, "~> 0.6.0"},
       {:phoenix_profiler, "~> 0.1.0", github: "mcrumm/phoenix_profiler"}
     ]
   end

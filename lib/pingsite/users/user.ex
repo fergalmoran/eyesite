@@ -10,14 +10,13 @@ defmodule PingSite.Users.User do
     pow_user_fields()
     field :display_name, :string
     timestamps()
+
+    has_many :devices, PingSite.Users.DeviceRegistration
   end
 
-  def changeset(user_or_changeset, attrs) do
-    Logger.debug("changeset....")
-    IO.inspect(user_or_changeset)
-    IO.inspect(attrs)
-    user_or_changeset
+  def changeset(changeset, attrs) do
+    changeset
+    |> pow_changeset(attrs)
     |> cast(attrs, [:display_name])
-    |> validate_required([:display_name])
   end
 end

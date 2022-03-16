@@ -7,6 +7,7 @@ defmodule PingSiteWeb.API.V1.RegistrationController do
 
   @spec create(Conn.t(), map()) :: Conn.t()
   def create(conn, %{"user" => user_params}) do
+    IO.inspect(user_params)
     conn
     |> Pow.Plug.create_user(user_params)
     |> case do
