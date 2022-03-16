@@ -9,13 +9,18 @@ defmodule PingSite.Users do
 
   alias PingSite.Users.User
 
+  def get_registrations(user_id) do
+    results = Repo.get!(User, user_id) |> Repo.preload(:devices)
+    results.devices
+  end
+
   def list_users do
     Repo.all(User)
   end
 
-
   def get_user!(id), do: Repo.get!(User, id)
 
+  @spec create_user(%{optional(:__struct__) => none, optional(atom | binary) => any}) :: any
   def create_user(attrs \\ %{}) do
     %User{}
     |> User.changeset(attrs)

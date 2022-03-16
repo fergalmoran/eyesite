@@ -68,10 +68,12 @@ config :tailwind,
 # host check jobs
 config :pingsite, PingSite.Scheduler,
   jobs: [
-    # Every minute
-    {{:cron, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
     # Every second
     # {{:extended, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
+    # Every 10 seconds
+    # Every minute
+    # {{:cron, "* * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
+    {{:extended, "0,10,20,30,40,50 * * * * *"}, {PingSite.Scheduler.Jobs.CheckHosts, :run, []}}
   ]
 
 # push notifications

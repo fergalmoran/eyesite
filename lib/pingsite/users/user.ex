@@ -10,6 +10,8 @@ defmodule PingSite.Users.User do
     pow_user_fields()
     field :display_name, :string
     timestamps()
+
+    has_many :devices, PingSite.Users.DeviceRegistration
   end
 
   def changeset(changeset, attrs) do
